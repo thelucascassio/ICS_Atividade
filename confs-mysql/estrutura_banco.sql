@@ -1,0 +1,13 @@
+CREATE TABLE Categoria(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Produto(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    descricao VARCHAR(200),
+    categoria_id INT NOT NULL,
+    FOREIGN KEY(categoria_id) REFERENCES Categoria(id)
+);
